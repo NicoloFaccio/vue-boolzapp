@@ -1,0 +1,12 @@
+#app{
+    height: 100vh;
+    background-image: linear-gradient(hsla(174, 100%, 29%, 1) 200px, rgba(216, 219, 213, 1) 200px);
+}
+
+main {
+    border: 1px solid red;
+    margin: 0 auto;
+    width: 60%;
+    height: calc(100% - 5vh);
+}
+
