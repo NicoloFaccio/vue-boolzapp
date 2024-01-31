@@ -142,21 +142,10 @@
                             <p class="m-0">
                                {{element.message}}
                             </p>
-                            <!-- <span>
+                             <span>
                                 {{element.date}}
-                            </span> -->
-                        </div>
-                    
-                    
-                        <!-- <div class="received bg-light p-3 rounded position-relative">
-                            <p class="m-0">
-                                hai portato a spasso il cane
-                            </p>
-                            <span>
-                                15:00
-                            </span>
-                        </div> -->
-                    
+                            </span> 
+                        </div>                    
                 </div>
 
                 <div id="col-right-new-message" class="d-flex align-items-center p-2 gap-3">
@@ -168,7 +157,7 @@
                             name="newMessage"
                             id="newMessage"
                             placeholder="Nuovo messaggio.."
-                            @key.enter="addMessage"
+                            @keyUp.enter="addMessage"
                         />
                     </div>
                     <i class="fa fa-microphone px-3" aria-hidden="true"></i>

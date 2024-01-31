@@ -3,6 +3,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
+
             user: [
                 {
                     name: "Sofia",
@@ -176,7 +177,7 @@ createApp({
             ],
 
             currentChat: 0,
-            newMessage: ''
+            newMessages: '',
 
         }
     },
@@ -187,9 +188,11 @@ createApp({
         },
 
         addMessage(){
-            if ( this.newMessage !== ''){
-                this.user.message.push(this.newMessage)
+            if ( this.newMessages == ''){
+                this.user.push(this.newMessages)
             }
-        }
+
+            console.log(user)
+        },
     }
 }).mount("#app");
