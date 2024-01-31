@@ -3,6 +3,14 @@ const {createApp} = Vue
 createApp({
     data(){
         return {
+            user: [
+                {
+                    name: "Sofia",
+                    avatar: "./assets/img/avatar_io.jpg",
+                    massages: "" 
+                }
+            ],
+
             contacts: [
                 {
                     name: 'Michele',
@@ -167,7 +175,8 @@ createApp({
                 }
             ],
 
-            currentChat: 0
+            currentChat: 0,
+            newMessage: ''
 
         }
     },
@@ -175,6 +184,12 @@ createApp({
     methods: {
         changeChat(index){
             this.currentChat = index
+        },
+
+        addMessage(){
+            if ( this.newMessage !== ''){
+                this.user.message.push(this.newMessage)
+            }
         }
     }
 }).mount("#app");
