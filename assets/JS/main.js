@@ -187,14 +187,31 @@ createApp({
             this.currentChat = index
         },
 
+        generationDate(){
+            let DateTime = luxon.DateTime;
+            const now = DateTime.local();
+            const formattedDateTime = now.toFormat('dd/MM/yyyy HH:mm:ss');
+            return formattedDateTime 
+        },
+
         addMessage(){
             this.contacts[this.currentChat].messages.push(
                 {
-                    date: '28/03/2020 16:15:22',
+                    date: this.generationDate(),
                     message: this.newMessages,
                     status: 'sent'
                 }
             )
+
+            setTimeout(() => {
+                this.contacts[this.currentChat].messages.push(
+                    {
+                        date: this.generationDate(),
+                        message: "Ok",
+                        status: 'received'
+                    }
+                )
+            }, 2000)
         },
     }
 }).mount("#app");
