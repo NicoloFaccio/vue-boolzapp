@@ -178,6 +178,7 @@ createApp({
 
             currentChat: 0,
             newMessages: '',
+            searchContact: ''
 
         }
     },
@@ -213,5 +214,16 @@ createApp({
                 )
             }, 2000)
         },
+
+        scannerContact(){
+            this.contacts.forEach((element) => {
+                console.log(element.name.toLowerCase())
+                if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                    element.visible = true
+                } else {
+                    element.visible = false
+                }
+            })
+        }
     }
 }).mount("#app");

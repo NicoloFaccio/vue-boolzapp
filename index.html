@@ -54,8 +54,13 @@
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Cerca nella chat..." aria-label="Username"
-                        aria-describedby="basic-addon1">
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Cerca nella chat..." aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        v-model="searchContact"
+                        @keyUp="scannerContact">
                     </div>
                 </div>
 
@@ -66,7 +71,9 @@
                         <div
                             v-for="(element, index) in contacts"
                             @click="changeChat(index)"
-                            class="p-2 border d-flex align-items-center justify-content-between gap-2">
+                            class="p-2 border"
+                            :class="element.visible ? 'd-flex align-items-center justify-content-between gap-2': '' "
+                            v-show="element.visible">
 
                             <div class="d-flex align-items-center">
                                 <figure>
@@ -107,7 +114,7 @@
                         </figure>
                         <div>
                             <span>{{contacts[currentChat].name}}</span>
-                            <p class="ultimo-accesso">Ultimo accesso oggi alle 12:00</p>
+                            <p class="ultimo-accesso">Ultimo accesso oggi alle {{generationDate()}}</p>
                         </div>
                     </div>
                     <div class="d-flex gap-3">
