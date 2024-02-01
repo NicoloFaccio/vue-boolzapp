@@ -188,11 +188,13 @@ createApp({
         },
 
         addMessage(){
-            if ( this.newMessages == ''){
-                this.user.push(this.newMessages)
-            }
-
-            console.log(user)
+            this.contacts[this.currentChat].messages.push(
+                {
+                    date: '28/03/2020 16:15:22',
+                    message: this.newMessages,
+                    status: 'sent'
+                }
+            )
         },
     }
 }).mount("#app");
